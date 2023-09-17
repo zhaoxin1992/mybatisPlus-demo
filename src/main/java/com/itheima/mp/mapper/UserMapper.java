@@ -8,6 +8,9 @@ import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
+/**
+ * @author daisy
+ */
 public interface UserMapper extends BaseMapper<User> {
     List<User> queryUserByIds(@Param("ids") List<Long> ids);
 
@@ -15,4 +18,7 @@ public interface UserMapper extends BaseMapper<User> {
     void updateBalanceByWrapper(@Param("amount") int amount, @Param("ew") QueryWrapper<User> wrapper);
 
     List<User> queryUsersByWrapper(@Param("ew") QueryWrapper<User> wrapper);
+
+    List<User> queryUserByInfo(@Param("name") String name,@Param("status")  int status);
+
 }

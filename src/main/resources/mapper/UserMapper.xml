@@ -19,4 +19,11 @@
         INNER JOIN address a on u.id = a.user_id
         ${ew.customSqlSegment}
     </select>
+
+    <select id="queryUserByInfo" resultType="com.itheima.mp.domain.po.User">
+        SELECT *
+        FROM user
+
+        WHERE username=#{name} and status=#{status}
+    </select>
 </mapper>
